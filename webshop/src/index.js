@@ -7,7 +7,30 @@ import './index.css';
 import {createStore, combineReducers} from 'redux';
 import {Provider} from 'react-redux'; 
 
-import {AdminReducer} from './reducers/reducers.js';  // my reducers!
+import {mainReducer} from './reducers/reducers.js';  // my reducers!
 
-ReactDOM.render(<App />, document.getElementById('root'));
+
+
+//STATE
+
+const initialState={
+
+    products:[
+                {name: 'banana', price: 10, amount: 100},
+                {name: 'apple', price: 5, amount: 50},
+             ],
+    customers: [
+                {name: 'Admin', loggedin: true},
+                {name: 'Lars', loggedin: false},
+               ],
+    history:[{}]
+
+}
+
+
+
+const store = createStore(mainReducer, initialState);
+
+ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));
 registerServiceWorker();
+
