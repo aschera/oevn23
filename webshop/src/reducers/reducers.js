@@ -5,24 +5,23 @@ import { ADMIN_ADD_ITEM_ACTION } from '../actions/actions.js';
 const initialState={
 
     products:[
-	{name: 'banana', price: 10, amount: 100},
-	{name: 'apple', price: 5, amount: 50},
-	
-    ],
+                {name: 'banana', price: 10, amount: 100},
+                {name: 'apple', price: 5, amount: 50},
+             ],
     customers: [
-	{name: 'Admin', loggedin: true},
-	{name: 'Lars', loggedin: false},
-    ],
-    history:[{customer, state, action, timestamp}]
+                {name: 'Admin', loggedin: true},
+                {name: 'Lars', loggedin: false},
+               ],
+    history:[{}]
 
 }
 
 
 // REDUCERS
 
-function tabReducer(state = [], action) {
+function AdminReducer(state = [], action) {
 	switch( action.type ) {
-		case CADMIN_ADD_ITEM_ACTION:
+		case ADMIN_ADD_ITEM_ACTION:
 
 			return [...state,
 				{name: action.name, 
@@ -35,4 +34,4 @@ function tabReducer(state = [], action) {
 }
 
 
-export {tabReducer};
+export {AdminReducer};

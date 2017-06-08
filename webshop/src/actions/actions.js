@@ -21,13 +21,13 @@ const CUSTOMER_REMOVE_FROM_CART_ACTION = "CUSTOMER_PURCHASE_ITEMS_ACTION";
 
 //ADMIN: add item
 function additem(name, price, amount) {
-  const action = {
+  
+  return { 
     type: ADMIN_ADD_ITEM_ACTION,
     name: name, 
     price: price, 
     amount: amount
-  }
-  return { action.type, action.name, action.price, action.amount}
+}
 }
 /* ********************************************************************** */ 
 
