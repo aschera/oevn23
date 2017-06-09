@@ -12,7 +12,7 @@ class App extends Component {
         
         <Form /> 
         
-        <Products />
+        <Products items={this.props.products} />
 
       </div>
     );
