@@ -13,14 +13,14 @@ class App extends Component {
         <Form />
 
         <Products items={this.props.products} />
-        {this.props.products[1].name}
+
       </div>
     );
   }
 }
 
 function mapStateToProps(state) {
-	console.log('state:', state);
+
 	return {
 		...state
 	}

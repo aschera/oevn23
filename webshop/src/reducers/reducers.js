@@ -1,23 +1,20 @@
-import { ADMIN_ADD_ITEM_ACTION } from '../actions/actions.js';
+import { ADMIN_ADD_ITEM_ACTION, ADMIN_DELETE_ITEM_ACTION } from '../actions/actions.js';
 
 
 
 
 // REDUCERS
 
-function mainReducer(state = [], action) {
+function adminReducer(state = [], action) {
 	switch( action.type ) {
 		case ADMIN_ADD_ITEM_ACTION:
-
-			return [...state,
-				{name: action.name, 
-				price: action.price, 
-				amount: action.amount}
-				];
+			return [...state, action];
+		case ADMIN_DELETE_ITEM_ACTION:
+		    return Object.assign({}, state, {data:[]});
 		default:
 			return state;
 	}
 }
 
 
-export {mainReducer};
+export {adminReducer};
