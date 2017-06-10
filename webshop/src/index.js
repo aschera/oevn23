@@ -4,8 +4,8 @@ import App from './components/App';  // components map!
 import registerServiceWorker from './registerServiceWorker';
 import './index.css';
 
-import {createStore, combineReducers} from 'redux';
-import {Provider} from 'react-redux'; 
+import {createStore} from 'redux';
+import {Provider} from 'react-redux';
 
 import {mainReducer} from './reducers/reducers.js';  // my reducers!
 
@@ -33,4 +33,3 @@ const store = createStore(mainReducer, initialState);
 
 ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));
 registerServiceWorker();
-

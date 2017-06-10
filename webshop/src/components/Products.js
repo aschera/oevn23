@@ -1,16 +1,18 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import * as actions from '../actions/actions.js';
+//import * as actions from '../actions/actions.js';
 
 
 class Products extends Component {
-	constructor(props) {
-		super(props);
-	}
-    
+
+
 	render() {
 		   let i=0;
-	       const list = props.items.map( x => <li key={i++}>{x}</li> )
+	       const list = this.props.items.map( x => <li key={i++}>
+					 <span>Name: {x.name}</span>,
+					 <span> Price: {x.price}</span>,
+					 <span> Amount: {x.amount}</span>
+					 </li> )
 		return (
 			<div id="ul">
             <h3>ADMIN</h3>
@@ -26,10 +28,3 @@ function mapStateToProps(state) {
     return { value: state.value };
 }
 export default connect(mapStateToProps)(Products);
-
-
-let i=0;
-	const list = props.items.map( x => <li key={i++}>{x}</li> )
-	return (
-		<ul>{list}</ul>
-);
