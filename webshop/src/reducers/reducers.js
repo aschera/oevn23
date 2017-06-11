@@ -22,14 +22,22 @@ function productReducer(state = [], action) {
 		case ADMIN_ADD_ITEM_ACTION:
 			return [...state, action];
 		case ADMIN_REMOVE_ITEM_ACTION:
+		if(state.length < 2 ){
+			let result = [];
+					    return result;
+		}
+		else {
 			let index = state.indexOf(action.id);
-			let result = state.splice(index, 1);
-		console.log(result);
-		    return result;
+			let result = state.splice(index,1);
+					    return result;
+		}
+
 		default:
 			return state;
 	}
 }
+
+
 function pictureReducer(state = '', action) {
 	return state;
 }
