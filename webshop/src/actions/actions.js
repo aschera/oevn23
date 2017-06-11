@@ -1,38 +1,66 @@
+const CHANGE_TAB = 'CHANGE_TAB';
+const ADD_NUMBER = 'ADD_NUMBER';
+const HISTORY = 'HISTORY';
 
-/* ***************************************************************************** */
-/* ******************************ACTIONS**************************************** */
+const ADMIN_ADD_ITEM_ACTION = 'ADMIN_ADD_ITEM_ACTION';
+const ADMIN_REMOVE_ITEM_ACTION = 'ADMIN_REMOVE_ITEM_ACTION';
 
-// ADMIN
-const ADMIN_ADD_ITEM_ACTION = "ADMIN_ADD_ITEM_ACTION";
-//const ADMIN_CHANGE_ITEM_ACTION = "ADMIN_CHANGE_ITEM_ACTION";
-const ADMIN_DELETE_ITEM_ACTION = "ADMIN_DELETE_ITEM_ACTION";
+function actionChangeTab(selectedTab) {
+	return {
+		type: CHANGE_TAB,
+		tab: selectedTab
+	}
+}
 
-//CUSTOMER
-//const CUSTOMER_ADD_ITEM_TO_CART_ACTION = "CUSTOMER_ADD_ITEM_TO_CART_ACTION";
-//const CUSTOMER_PURCHASE_ITEMS_ACTION = "CUSTOMER_PURCHASE_ITEMS_ACTION";
-//const CUSTOMER_SEE_CART_ACTION = "CUSTOMER_PURCHASE_ITEMS_ACTION";
-//const CUSTOMER_REMOVE_FROM_CART_ACTION = "CUSTOMER_PURCHASE_ITEMS_ACTION";
-
-
+function actionAddNumber(x) {
+	return {
+		type: ADD_NUMBER,
+		number: x
+	}
+}
 //ADMIN: add item
-function additem(name, price, amount) {
-  return {
-    type: ADMIN_ADD_ITEM_ACTION,
-    id: name + price,
-    name: name,
-    price: price,
-    amount: amount
+function actionAddProduct(name, price, amount) {
+	return {
+		type: ADMIN_ADD_ITEM_ACTION,
+		id: name+price,
+		name: name,
+		price: price,
+		amount: amount
+	}
 }
-}
-/* ********************************************************************** */
-//ADMIN: delete item
-function deleteitem(id) {
-  return {
-    type: ADMIN_DELETE_ITEM_ACTION,
-    id
-}
-}
-/* ********************************************************************** */
+//ADMIN: add item
+function actionRemoveProduct(id) {
+	return {
+		type: ADMIN_REMOVE_ITEM_ACTION,
+		id: id
 
+	}
+}
 
-export { additem, ADMIN_ADD_ITEM_ACTION, deleteitem, ADMIN_DELETE_ITEM_ACTION };
+function actionHistory(action) {
+	return {
+		type: HISTORY,
+		action
+	}
+}
+const FETCH_STARTED = 'FETCH_STARTED', FETCH_SUCCESS = 'FETCH_SUCCESS', FETCH_FAILURE = 'FETCH_FAILURE';
+function actionFetchStarted() {
+	return {
+		type: FETCH_STARTED
+	}
+}
+function actionFetchSuccess(data) {
+	return {
+		type: FETCH_SUCCESS,
+		data: data
+	}
+}
+function actionFetchFailure(error) {
+	return {
+		type: FETCH_FAILURE,
+		error: error
+	}
+}
+
+export { actionRemoveProduct, ADMIN_REMOVE_ITEM_ACTION, CHANGE_TAB, actionAddProduct, ADMIN_ADD_ITEM_ACTION, actionChangeTab, ADD_NUMBER, actionAddNumber, HISTORY, actionHistory,
+actionFetchStarted, actionFetchSuccess, actionFetchFailure, FETCH_STARTED, FETCH_SUCCESS, FETCH_FAILURE };
