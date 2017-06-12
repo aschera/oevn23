@@ -42,10 +42,10 @@ class TabComponent extends Component {
 			<div className="App">
 			<div className="tabheader">
 
-			  <button onClick={this.handleClickProducts}>Admin: product options</button>
-				<button onClick={this.handleClickHistory}>History</button>
-        <button onClick={this.handleClickBuyProducts}>Customer: select products</button>
-				<button onClick={this.handleClickSeeCart}>Customer: Cart</button>
+			  <button className="tabA" onClick={this.handleClickProducts}>Admin: product options</button>
+				<button className="tab" onClick={this.handleClickHistory}>History</button>
+        <button className="tabC" onClick={this.handleClickBuyProducts}>Customer: select products</button>
+				<button className="tabC" onClick={this.handleClickSeeCart}>Customer: Cart</button>
 			</div>
 			<div className="tabbody">
 				{view}
@@ -88,16 +88,16 @@ class TabComponent extends Component {
 	}
 
 	handleClickAddProduct(e, d) {
-
 		let n = d.name;
 		let p = d.price;
 		let a = d.amount;
-
+    let w = d.imgurl;
+		console.log(d);
 		try {
-				let action = actionAddProduct(n,p,a);
+				let action = actionAddProduct(n,p,a,w);
 				this.props.dispatch( action );
 				this.props.dispatch( actionHistory(action) );
-        inputs = {name: undefined, price: undefined, amount: undefined}
+        inputs = {name: undefined, price: undefined, amount: undefined, imgurl: undefined}
 		}
 		catch(err) {
     		console.log(err);

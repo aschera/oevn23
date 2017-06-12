@@ -22,25 +22,27 @@ function actionAddNumber(x) {
 }
 
 //customer: add item to cart
-function actionAddToCart(id,name,price,amount) {
+function actionAddToCart(id,name,price,amount, imgurl) {
 	return {
 		type: CUSTOMER_ADD_ITEM_TO_CART_ACTION,
 		id: id,
 		name: name,
 		price: price,
-		amount: 1
+		amount: 1,
+		imgurl: imgurl
 
 	}
 }
 
 //ADMIN: add item
-function actionAddProduct(name, price, amount) {
+function actionAddProduct(name, price, amount, imgurl) {
 	return {
 		type: ADMIN_ADD_ITEM_ACTION,
 		id: name+price,
 		name: name,
 		price: price,
-		amount: amount
+		amount: amount,
+		imgurl: imgurl
 	}
 }
 //ADMIN: delete item

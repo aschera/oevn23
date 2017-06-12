@@ -30,3 +30,54 @@ button{margin-left:1em;}
 #ADMIN_ADD_ITEM_ACTION{color:red;}
 #ADMIN_REMOVE_ITEM_ACTION{color:green;}
 #CUSTOMER_ADD_ITEM_TO_CART_ACTION{color:blue;}
+
+
+
+.tabA{
+	white-space: normal;
+	padding: 0.3em 0.6em;
+	float: left;
+	width: auto;
+	border: none;
+	outline: none;
+	display: block;
+	overflow: hidden;
+	text-decoration: none;
+	text-align: center;
+	cursor: pointer;
+	color: #fff !important;
+	background-color: #f44336 !important;
+}
+
+.tabC{
+	white-space: normal;
+	padding: 0.3em 0.6em;
+	float: left;
+	width: auto;
+	border: none;
+	outline: none;
+	display: block;
+	overflow: hidden;
+	text-decoration: none;
+	text-align: center;
+	cursor: pointer;
+	color: #fff !important;
+	background-color: blue !important;
+}
+.tab{
+	white-space: normal;
+	padding: 0.3em 0.6em;
+	float: left;
+	width: auto;
+	border: none;
+	outline: none;
+	display: block;
+	overflow: hidden;
+	text-decoration: none;
+	text-align: center;
+	cursor: pointer;
+	color: black !important;
+	background-color: yellow !important;
+}
+.admin{color:red;}
+.customer{color:blue;}

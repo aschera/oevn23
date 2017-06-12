@@ -8,11 +8,12 @@ function Shop(props) {
       <span>Name: {x.name} </span>,
       <span> Price: {x.price} </span>,
       <span> Amount: {x.amount} </span>
+      <span><img src={x.imgurl} width='50' height='50' alt={x.name}/></span>
       <button onClick={click} id={x.name+x.price} >Add to cart</button>
       </li> )
       return (
   			<div id="ul">
-        <h4>The Shop:</h4>
+        <h4 className="customer">The Shop:</h4>
   			<ul>{list}</ul>
   		  </div>
   		);

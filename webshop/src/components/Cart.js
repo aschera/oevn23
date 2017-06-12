@@ -12,7 +12,7 @@ function Cart(props) {
       let l = list.length;
       return (
   			<div id="ul">
-        <h4>The Cart:</h4>
+        <h4 className="customer">The Cart:</h4>
         <h5>You have {l} items</h5>
   			<ul>{list}</ul>
         <button>Checkout</button>

@@ -1,6 +1,6 @@
 import React from 'react';
 
-var inputs = {name: undefined, price: undefined, amount: undefined}
+var inputs = {name: undefined, price: undefined, amount: undefined, imgurl: undefined}
 
 function Products(props) {
   let i=0;
@@ -8,11 +8,12 @@ function Products(props) {
       <span>Name: {x.name}</span>,
       <span> Price: {x.price}</span>,
       <span> Amount: {x.amount}</span>
+      <span><img src={x.imgurl} width='50' height='50' alt={x.name}/></span>
       <button onClick={props.handleClickRemoveProduct} id={x.name+x.price}  >delete</button>
       </li> )
       return (
   			<div id="ul">
-        <h4>Products in the store:</h4>
+        <h4 className="admin">Products in the store:</h4>
   			<ul>{list}</ul>
         <br />
         <hr />
@@ -21,6 +22,7 @@ function Products(props) {
         <input type="text" onChange={enterName} className="name" placeholder="name" name="name" />
         <input type="number" onChange={enterPrice} className="price" placeholder="price" name="price" />
         <input type="number" onChange={enterAmount} className="amount" placeholder="amount" name="amount" />
+        <input type="text" onChange={enterURL} className="url" placeholder="url" name="url" />
         <button type="reset" onClick={AddProduct}>Add product</button>
   		  </div>
   		);
@@ -28,8 +30,8 @@ function Products(props) {
 
 
       function AddProduct(e) {
-        
         props.handleClickAddProduct(e, inputs);
+        console.log(inputs);
       }
       function enterName(e){
       	inputs.name = e.target.value;
@@ -39,6 +41,9 @@ function Products(props) {
       }
       function enterAmount(e){
       	inputs.amount = e.target.value;
+      }
+      function enterURL(e){
+      	inputs.imgurl = e.target.value;
       }
 }
 
