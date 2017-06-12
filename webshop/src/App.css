@@ -32,6 +32,7 @@ ul li {
     background: #cce5ff;
     margin: 0.2em;
 		padding:0.3em;
+    border: 1px solid black;
 }
 ul {
     background: #3399ff;
@@ -43,19 +44,23 @@ ul {
   width: 50vw;
   white-space: nowrap;
 }
-#right{text-align: right;}
-#left{text-align: left;}
-#center{text-align: center;}
+.right{text-align: right;}
+.left{text-align: left;}
+.center{text-align: center;}
 /* Column widths are based on these cells */
+
+.amountsale{width: 100%;}
+.price {margin: 0.3em;
+padding: 0.4em;}
+
 .row-name {
   width: 30%;
 }
 .row-price {
-  width: 10%;
+  width: 5%;
 }
 .row-amount {
   width: 10%;
-	text-align: right;
 }
 .row-img {
   width: 30%;
@@ -63,10 +68,14 @@ ul {
 .row-button{
 	width: 20%;
 }
+.row-soldn{
+	width: 70%;
+}
 .users td {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  border: 1px solid black;
 }
 .users th {
   background: darkblue;
@@ -78,6 +87,7 @@ ul {
 }
 .users tr:nth-child(even) {
   background: lightblue;
+  border: 1px solid black;
 }
 
 */ /////////////////////////////////////////////// */
