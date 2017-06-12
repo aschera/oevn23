@@ -5,22 +5,22 @@ import registerServiceWorker from './registerServiceWorker';
 import './index.css';
 import {createStore, combineReducers} from 'redux';
 import {Provider} from 'react-redux';
-import {tabReducer, productReducer, numbersReducer, pictureReducer, historyReducer, fetchReducer} from './reducers/reducers.js';
+import {tabReducer, cartReducer,productReducer, historyReducer} from './reducers/reducers.js';
+
 
 
 let initialState = {
 	tab: 1,  // 1=väder, 2=tal
-	products:[],
+	products:[{id:'Teddy100', name: 'Teddy', price:100, amount:5}, {id:'Doll200', name: 'Doll', price:200, amount:4}],
 	history: [{type: 'TEST'}],
+	cart: [{id:'Teddy100', name: 'Teddy', price:100, amount:1}],
 }
 
 let rootReducer = combineReducers({
 	tab: tabReducer,
-	numbers: numbersReducer,
 	products: productReducer,
-	imageUrl: pictureReducer,
 	history: historyReducer,
-	fetch: fetchReducer
+	cart: cartReducer
 });
 const store = createStore(rootReducer, initialState);
 

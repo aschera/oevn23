@@ -23,3 +23,10 @@
 .App {
 	padding: 20px;
 }
+
+button{margin-left:1em;}
+
+
+#ADMIN_ADD_ITEM_ACTION{color:red;}
+#ADMIN_REMOVE_ITEM_ACTION{color:green;}
+#CUSTOMER_ADD_ITEM_TO_CART_ACTION{color:blue;}

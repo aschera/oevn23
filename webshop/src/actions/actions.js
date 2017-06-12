@@ -5,6 +5,8 @@ const HISTORY = 'HISTORY';
 const ADMIN_ADD_ITEM_ACTION = 'ADMIN_ADD_ITEM_ACTION';
 const ADMIN_REMOVE_ITEM_ACTION = 'ADMIN_REMOVE_ITEM_ACTION';
 
+const CUSTOMER_ADD_ITEM_TO_CART_ACTION = 'CUSTOMER_ADD_ITEM_TO_CART_ACTION';
+
 function actionChangeTab(selectedTab) {
 	return {
 		type: CHANGE_TAB,
@@ -18,6 +20,19 @@ function actionAddNumber(x) {
 		number: x
 	}
 }
+
+//customer: add item to cart
+function actionAddToCart(id,name,price,amount) {
+	return {
+		type: CUSTOMER_ADD_ITEM_TO_CART_ACTION,
+		id: id,
+		name: name,
+		price: price,
+		amount: 1
+
+	}
+}
+
 //ADMIN: add item
 function actionAddProduct(name, price, amount) {
 	return {
@@ -28,11 +43,14 @@ function actionAddProduct(name, price, amount) {
 		amount: amount
 	}
 }
-//ADMIN: add item
-function actionRemoveProduct(id) {
+//ADMIN: delete item
+function actionRemoveProduct(id,name,price, amount) {
 	return {
 		type: ADMIN_REMOVE_ITEM_ACTION,
-		id: id
+		id: id,
+		name: name,
+		price: price,
+		amount: amount
 
 	}
 }
@@ -43,24 +61,6 @@ function actionHistory(action) {
 		action
 	}
 }
-const FETCH_STARTED = 'FETCH_STARTED', FETCH_SUCCESS = 'FETCH_SUCCESS', FETCH_FAILURE = 'FETCH_FAILURE';
-function actionFetchStarted() {
-	return {
-		type: FETCH_STARTED
-	}
-}
-function actionFetchSuccess(data) {
-	return {
-		type: FETCH_SUCCESS,
-		data: data
-	}
-}
-function actionFetchFailure(error) {
-	return {
-		type: FETCH_FAILURE,
-		error: error
-	}
-}
 
-export { actionRemoveProduct, ADMIN_REMOVE_ITEM_ACTION, CHANGE_TAB, actionAddProduct, ADMIN_ADD_ITEM_ACTION, actionChangeTab, ADD_NUMBER, actionAddNumber, HISTORY, actionHistory,
-actionFetchStarted, actionFetchSuccess, actionFetchFailure, FETCH_STARTED, FETCH_SUCCESS, FETCH_FAILURE };
+
+export { actionAddToCart, CUSTOMER_ADD_ITEM_TO_CART_ACTION, actionRemoveProduct, ADMIN_REMOVE_ITEM_ACTION, CHANGE_TAB, actionAddProduct, ADMIN_ADD_ITEM_ACTION, actionChangeTab, ADD_NUMBER, actionAddNumber, HISTORY, actionHistory };

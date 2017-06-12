@@ -1,18 +1,22 @@
 import React, {Component} from 'react';
 import History from './History';
 import Products from './Products';
+import Shop from './Shop';
+import Cart from './Cart';
 // ny komponent
-import {actionChangeTab, actionRemoveProduct, actionAddProduct, actionHistory} from '../actions/actions.js';
+import {actionAddToCart, actionChangeTab, actionRemoveProduct, actionAddProduct, actionHistory} from '../actions/actions.js';
 // nya actions
 import {connect} from 'react-redux';
 
-var name, price, amount;
+var inputs = {name: undefined, price: undefined, amount: undefined}
 class TabComponent extends Component {
 
 	constructor(props) {
 		super(props);
 		this.handleClickProducts = this.handleClickProducts.bind(this);
+		this.handleClickBuyProducts = this.handleClickBuyProducts.bind(this);
 		this.handleClickHistory = this.handleClickHistory.bind(this);
+		this.handleClickSeeCart = this.handleClickSeeCart.bind(this);
 
 		this.handleClickAddProduct = this.handleClickAddProduct.bind(this);
 		this.enterName = this.enterName.bind(this);
@@ -20,32 +24,41 @@ class TabComponent extends Component {
 		this.enterAmount = this.enterAmount.bind(this);
 
 		this.handleClickRemoveProduct = this.handleClickRemoveProduct.bind(this);
+
+		this.handleAddCart = this.handleAddCart.bind(this);
 	}
 	render() {
 		let view;
 		if( this.props.tab === 2 ) {
 			view = <History history={this.props.history} />;
 		} else if( this.props.tab === 1 ) {
-			view = <Products products={this.props.products} handleClickRemoveProduct={this.handleClickRemoveProduct}/>;
+			view = <Products products={this.props.products}  handleClickRemoveProduct={this.handleClickRemoveProduct}/>;
+		} else if( this.props.tab === 3 ) {
+			view = <Shop products={this.props.products} handleAddCart={this.handleAddCart}/>;
+		} else if( this.props.tab === 4 ) {
+			view = <Cart cart={this.props.cart} />;
 		}
 		return (
 			<div className="App">
 			<div className="tabheader">
 
-			  <button onClick={this.handleClickProducts}>products</button>
-				<button onClick={this.handleClickHistory}>historik</button>
-
+			  <button onClick={this.handleClickProducts}>Admin: product options</button>
+				<button onClick={this.handleClickHistory}>History</button>
+        <button onClick={this.handleClickBuyProducts}>Customer: select products</button>
+				<button onClick={this.handleClickSeeCart}>Customer: Cart</button>
 			</div>
 			<div className="tabbody">
 				{view}
 			</div>
 			<div>
 				<h4>Add a new product:</h4>
-        <input ref="name" type="text" onChange={this.enterName} className="name" placeholder="name" name="name" value={name}/>
-        <input ref="price" type="number" onChange={this.enterPrice} className="price" placeholder="price" name="price" value={price}/>
-        <input ref="amount" type="number" onChange={this.enterAmount} className="amount" placeholder="amount" name="amount" value={amount}/>
+        <input ref="name" type="text" onChange={this.enterName} className="name" placeholder="name" name="name" value={inputs.name}/>
+        <input ref="price" type="number" onChange={this.enterPrice} className="price" placeholder="price" name="price" value={inputs.price}/>
+        <input ref="amount" type="number" onChange={this.enterAmount} className="amount" placeholder="amount" name="amount" value={inputs.amount}/>
         <button type="reset" onClick={this.handleClickAddProduct}>Add product</button>
 			</div>
+
+
 		  </div>
 		);
 	};
@@ -56,25 +69,39 @@ class TabComponent extends Component {
 			this.props.dispatch( action );
 			this.props.dispatch( actionHistory(action) );
 	}
+	handleAddCart(a) {
+		 let x = this.props.products;
+		 function find(key1, value) {
+			    var i = 0;
+			    for (var key in x) {
+		        var current = x[key];
+		        if (current[key1] === value) {
+		            return i;
+		        }
+		        i++;
+			    }
+			   return -1;
+			 }
+
+		 let result = find('id', a);
+		 let buy = this.props.products[result];
+		 console.log(buy);
+
+			let action = actionAddToCart(buy.id, buy.name, buy.price, buy.amount);
+			this.props.dispatch( action );
+			this.props.dispatch( actionHistory(action) );
+	}
 
 	handleClickAddProduct(e) {
-		let n = name;
-		let p = price;
-		let a = amount;
+		let n = inputs.name;
+		let p = inputs.price;
+		let a = inputs.amount;
 
 		try {
-			if(n!==undefined && p!==undefined && a!==undefined){
 				let action = actionAddProduct(n,p,a);
 				this.props.dispatch( action );
 				this.props.dispatch( actionHistory(action) );
-				name = undefined;
-				price = undefined;
-				amount= undefined;
-			}
-			else{
-				alert("Please Fill All Required Field");
-				return false;
-			}
+        inputs = {name: undefined, price: undefined, amount: undefined}
 		}
 		catch(err) {
     		console.log(err);
@@ -82,13 +109,13 @@ class TabComponent extends Component {
 
 }
 enterName(e){
-	name = e.target.value;
+	inputs.name = e.target.value;
 }
 enterPrice(e){
-	price = e.target.value;
+	inputs.price = e.target.value;
 }
 enterAmount(e){
-	amount = e.target.value;
+	inputs.amount = e.target.value;
 }
 
 
@@ -97,6 +124,12 @@ enterAmount(e){
 	}
 	handleClickProducts(e) {
 		this.changeTab(1);
+	}
+	handleClickBuyProducts(e) {
+		this.changeTab(3);
+	}
+	handleClickSeeCart(e) {
+		this.changeTab(4);
 	}
 	changeTab(tab) {
 		let action = actionChangeTab(tab);
@@ -111,6 +144,8 @@ function mapStateToProps(state) {
 		tab: state.tab,
 		products: state.products,
 		history: state.history,
+		shop: state.products,
+		cart: state.cart
 	}
 }
 

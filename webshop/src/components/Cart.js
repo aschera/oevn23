@@ -1,7 +1,26 @@
 import React from 'react';
 
-function cart(props) {
-	return <p>Cart goes here</p>
+
+
+function Cart(props) {
+  let i=0;
+    const list = props.cart.map( x => <li key={i++}>
+      <span>Name: {x.name} </span>,
+      <span> Price: {x.price} </span>,
+      <span> Amount: {x.amount} </span>
+      </li> );
+      let l = list.length;
+      return (
+  			<div id="ul">
+        <h4>The Cart:</h4>
+        <h5>You have {l} items</h5>
+  			<ul>{list}</ul>
+        <button>Checkout</button>
+  		  </div>
+  		);
+
 }
 
-export default cart;
+
+
+export default Cart;
