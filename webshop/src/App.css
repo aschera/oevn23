@@ -1,6 +1,9 @@
+.edit {
+    width: 60%;
+}
 .tabbody {
-	width: 50%;
-	height: 50%;
+	width: 70%;
+	height: 60%;
 	border: 1px solid black;
 	padding: 10px;
 	border-radius: 2px;
@@ -24,6 +27,64 @@
 	padding: 20px;
 }
 
+
+ul li {
+    background: #cce5ff;
+    margin: 0.2em;
+		padding:0.3em;
+}
+ul {
+    background: #3399ff;
+    padding: 20px;
+}
+*/  TABLE */
+.users {
+  table-layout: fixed;
+  width: 50vw;
+  white-space: nowrap;
+}
+#right{text-align: right;}
+#left{text-align: left;}
+#center{text-align: center;}
+/* Column widths are based on these cells */
+.row-name {
+  width: 30%;
+}
+.row-price {
+  width: 10%;
+}
+.row-amount {
+  width: 10%;
+	text-align: right;
+}
+.row-img {
+  width: 30%;
+}
+.row-button{
+	width: 20%;
+}
+.users td {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.users th {
+  background: darkblue;
+  color: white;
+}
+.users td,
+.users th {
+  padding: 5px 10px;
+}
+.users tr:nth-child(even) {
+  background: lightblue;
+}
+
+*/ /////////////////////////////////////////////// */
+#alist{
+    background: red;
+    padding: 20px;
+}
 button{margin-left:1em;}
 
 
