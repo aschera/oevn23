@@ -12,8 +12,8 @@ import {tabReducer, cartReducer,productReducer, historyReducer} from './reducers
 let initialState = {
 	tab: 1,  // 1=väder, 2=tal
 	products:[{id:'Teddy100', name: 'Teddy', price:100, amount:5}, {id:'Doll200', name: 'Doll', price:200, amount:4}],
-	history: [{type: 'TEST'}],
-	cart: [{id:'Teddy100', name: 'Teddy', price:100, amount:1}],
+	history: [],
+	cart: [],
 }
 
 let rootReducer = combineReducers({

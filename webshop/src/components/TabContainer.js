@@ -32,7 +32,7 @@ class TabComponent extends Component {
 		if( this.props.tab === 2 ) {
 			view = <History history={this.props.history} />;
 		} else if( this.props.tab === 1 ) {
-			view = <Products products={this.props.products}  handleClickRemoveProduct={this.handleClickRemoveProduct}/>;
+			view = <Products products={this.props.products}  handleClickAddProduct={this.handleClickAddProduct} handleClickRemoveProduct={this.handleClickRemoveProduct}/>;
 		} else if( this.props.tab === 3 ) {
 			view = <Shop products={this.props.products} handleAddCart={this.handleAddCart}/>;
 		} else if( this.props.tab === 4 ) {
@@ -51,11 +51,6 @@ class TabComponent extends Component {
 				{view}
 			</div>
 			<div>
-				<h4>Add a new product:</h4>
-        <input ref="name" type="text" onChange={this.enterName} className="name" placeholder="name" name="name" value={inputs.name}/>
-        <input ref="price" type="number" onChange={this.enterPrice} className="price" placeholder="price" name="price" value={inputs.price}/>
-        <input ref="amount" type="number" onChange={this.enterAmount} className="amount" placeholder="amount" name="amount" value={inputs.amount}/>
-        <button type="reset" onClick={this.handleClickAddProduct}>Add product</button>
 			</div>
 
 
@@ -92,10 +87,11 @@ class TabComponent extends Component {
 			this.props.dispatch( actionHistory(action) );
 	}
 
-	handleClickAddProduct(e) {
-		let n = inputs.name;
-		let p = inputs.price;
-		let a = inputs.amount;
+	handleClickAddProduct(e, d) {
+
+		let n = d.name;
+		let p = d.price;
+		let a = d.amount;
 
 		try {
 				let action = actionAddProduct(n,p,a);
