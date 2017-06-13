@@ -67,7 +67,7 @@ width: 100%;
     background-image: url(./logo.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    width: 45%;
+    width: 40%;
     float: none;
     height: 0;
     padding-top: 15.33%;
@@ -82,7 +82,7 @@ ul li {
     border: 1px solid #373737;
 }
 ul {
-    background: #C0B283;
+    background: #373737;
     padding:0.8em;
     margin-bottom: 0px;
 }
@@ -97,10 +97,11 @@ ul {
 .center{text-align: center;}
 /* Column widths are based on these cells */
 
-.amountsale{width: 100%;}
+.amountsale{width: 100%; color:white;}
 .price {margin: 0.3em;
 padding: 0.4em;}
-
+.url {margin: 0.3em;
+padding: 0.4em;}
 .row-name {
   width: 30%;
 }
@@ -148,9 +149,9 @@ button{
   background-color: #C0B283;
   color:#373737;
   width: 5em;
-  height: 3em;
-  padding: 10px;
-  line-height:15px;
+  height: 2.75em;
+  padding: 0.4em;
+  line-height:1em;
   border: solid 1px #fff;
   cursor: pointer;
   box-shadow: 1px 1px 2px 0 #707070;
@@ -158,6 +159,7 @@ button{
 }
 button:hover{box-shadow: inset 1px 1px 2px 0 #c9c9c9;background-color: #DCD0C0; color:#373737;}
 
+.inputs {padding: 0.8em; background-color: #373737;}
 
 #ADMIN_ADD_ITEM_ACTION{color:orange;}
 #ADMIN_REMOVE_ITEM_ACTION{color:green;}
@@ -167,10 +169,10 @@ button:hover{box-shadow: inset 1px 1px 2px 0 #c9c9c9;background-color: #DCD0C0; 
 
 .menu{
 	#F4F4F4-space: normal;
-  margin-right: 0.2em;
-	padding: 0.2em;
 	float: left;
-	width: 8em;
+  font-size-adjust: auto;
+  font-size: 0.8em;
+	width: 25%;
 	border: none;
 	outline: none;
 	display: block;
@@ -178,7 +180,6 @@ button:hover{box-shadow: inset 1px 1px 2px 0 #c9c9c9;background-color: #DCD0C0; 
 	text-decoration: none;
 	text-align: center;
 	cursor: pointer;
-  float: right;
 }
 .menu:hover{box-shadow: inset 2px 2px 3px 0 #c9c9c9; color:#F4F4F4}
 

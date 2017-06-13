@@ -6,7 +6,7 @@ function Cart(props) {
     let i=0;
     let price = 0;
     const list = props.cart.map( x => <li key={i++}>
-      <table class="users">
+      <table>
       <thead>
         <tr>
           <th className="row-1 row-name">Name</th>
@@ -32,6 +32,7 @@ function Cart(props) {
 
       return (
   			<div id="ul">
+        <br />
         <h4>Cart</h4>
         <h5>You have {l} items</h5>
   			<ul>{list}
@@ -40,11 +41,12 @@ function Cart(props) {
         <thead>
           <tr className="amountsale">
             <th className="left">Total Amount:</th>
-            <th className="right price">{price}</th>
+            <th className="right price">{price} SEK</th>
           </tr>
         </thead>
         </table>
         </ul>
+        <br />
         <button>Buy</button>
   		  </div>
   		);

@@ -50,10 +50,11 @@ class TabComponent extends Component {
 			<div className="App middle">
       <div className="logo" ><div className="img"></div></div>
 			<div className="tabheader">
-				<button className="menu" style={{backgroundColor: this.state.cart}}  onClick={this.handleClickSeeCart}>Cart</button>
-			  <button className="menu" style={{backgroundColor: this.state.options}} onClick={this.handleClickProducts}>Options</button>
+			  <button className="menu" style={{backgroundColor: this.state.shop}} onClick={this.handleClickBuyProducts}>Shop</button>
+
+			  <button className="menu" style={{backgroundColor: this.state.options}} onClick={this.handleClickProducts}>Edit</button>
 				<button className="menu" style={{backgroundColor: this.state.history}} onClick={this.handleClickHistory}>History</button>
-        <button className="menu" style={{backgroundColor: this.state.shop}} onClick={this.handleClickBuyProducts}>Shop</button>
+        <button className="menu" style={{backgroundColor: this.state.cart}}  onClick={this.handleClickSeeCart}>Cart</button>
 
 			</div>
 

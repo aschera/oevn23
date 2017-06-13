@@ -30,6 +30,7 @@ function Shop(props) {
       </li> )
       return (
   			<div id="ul">
+        <br />
         <h4>Shop</h4>
   			<ul>{list}</ul>
   		  </div>

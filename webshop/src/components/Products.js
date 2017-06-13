@@ -25,7 +25,7 @@ function Products(props) {
 
           <td >
             <button onClick={props.handleClickRemoveProduct} id={x.name+x.price}  >delete</button>
-            <button onClick={clickchange} id={x.name+x.price}>edit</button>
+
           </td>
 
         </tr>
@@ -34,21 +34,25 @@ function Products(props) {
       </li> )
       return (
   			<div id="ul">
-
+        <br />
         <h4>Products</h4>
 
   			<ul id="alist">{list}</ul>
         <br />
-        <hr/>
-
         <h4>Add a new product:</h4>
-        <input type="text" onChange={enterName} className="name " placeholder="name" name="name"  value={inputs.name}/>
-        <input type="number" onChange={enterPrice} className="price " placeholder="price" name="price" value={inputs.price}/>
-        <input type="number" onChange={enterAmount} className="amount " placeholder="amount" name="amount" value={inputs.amount}/>
-        <input type="text" onChange={enterURL} className="url " placeholder="url" name="url" value={inputs.imgurl}/>
-        <button type="reset" onClick={AddProduct}>Add</button>
+        <br />
+        <div className="inputs">
+          <input type="text" onChange={enterName} className="name " placeholder="name" name="name"  value={inputs.name}/>
+          <input type="number" onChange={enterPrice} className="price " placeholder="price" name="price" value={inputs.price}/>
+          <input type="number" onChange={enterAmount} className="amount " placeholder="amount" name="amount" value={inputs.amount}/>
+          <input type="text" onChange={enterURL} className="url " placeholder="url" name="url" value={inputs.imgurl}/>
+          <button type="reset" onClick={AddProduct}>Add</button>
+        </div>
+
   		  </div>
   		);
+
+  /*<button onClick={clickchange} id={x.name+x.price}>edit</button>*/
 
 
       function clickchange(e){
