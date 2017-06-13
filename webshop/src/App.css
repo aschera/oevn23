@@ -2,9 +2,11 @@
     width: 60%;
 }
 .tabbody {
-	width: 70%;
-	height: 60%;
-	padding: 0.3em;;
+  background-color: white;
+  height: 70%;
+  width: 70%;
+  border: 1px solid black;
+  padding: 0.1em;
 
 }
 .tabheader {
@@ -30,6 +32,7 @@ ul li {
 ul {
     background: grey;
     padding: 20px;
+    margin-bottom: 0px;
 }
 */  TABLE */
 .users {
@@ -97,7 +100,7 @@ button{
   padding: 10px;
   line-height:15px;
   border: solid 1px #fff;
-
+  cursor: pointer;
   box-shadow: 1px 1px 2px 0 #707070;
   transition: box-shadow 0.3s;
 }

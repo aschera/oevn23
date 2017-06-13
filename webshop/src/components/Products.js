@@ -35,7 +35,7 @@ function Products(props) {
       return (
   			<div id="ul">
 
-        <h4>Products in the store:</h4>
+        <h4>Products</h4>
 
   			<ul id="alist">{list}</ul>
         <br />

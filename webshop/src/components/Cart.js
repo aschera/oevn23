@@ -32,8 +32,7 @@ function Cart(props) {
 
       return (
   			<div id="ul">
-          <br />
-        <h4 className="customer">The Cart:</h4>
+        <h4>Cart</h4>
         <h5>You have {l} items</h5>
   			<ul>{list}
 
@@ -46,7 +45,7 @@ function Cart(props) {
         </thead>
         </table>
         </ul>
-        <button>Checkout</button>
+        <button>Buy</button>
   		  </div>
   		);
 
