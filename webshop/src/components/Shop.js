@@ -6,7 +6,7 @@ function Shop(props) {
   let i=0;
     const list = props.products.map( x => <li key={i++}>
 
-      <table class="users">
+      <table>
       <thead>
         <tr>
           <th className="row-1 row-name">Name</th>
@@ -30,6 +30,7 @@ function Shop(props) {
       </li> )
       return (
   			<div id="ul">
+          <br />
         <h4 className="customer">The Shop:</h4>
   			<ul>{list}</ul>
   		  </div>

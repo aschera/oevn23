@@ -1,4 +1,4 @@
-import { CUSTOMER_ADD_ITEM_TO_CART_ACTION, ADMIN_REMOVE_ITEM_ACTION, CHANGE_TAB, ADMIN_ADD_ITEM_ACTION,HISTORY } from '../actions/actions.js';
+import { ADMIN_EDIT_ITEM_ACTION, CUSTOMER_ADD_ITEM_TO_CART_ACTION, ADMIN_REMOVE_ITEM_ACTION, CHANGE_TAB, ADMIN_ADD_ITEM_ACTION,HISTORY } from '../actions/actions.js';
 
 
 function tabReducer(state = 1, action) {
@@ -18,7 +18,9 @@ function productReducer(state = [], action) {
 		let Removed = state.filter(function(elemenet) {
 			return elemenet.id !== action.id;
 		});
-		return Removed;
+		    return Removed;
+	 case ADMIN_EDIT_ITEM_ACTION:
+				return state;
 	default:
 		return state;
 		}

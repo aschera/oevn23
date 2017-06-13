@@ -89,13 +89,26 @@ padding: 0.4em;}
   background: lightblue;
   border: 1px solid black;
 }
-
+td {font-size: 0.8em;}
+th {font-size: 0.9em;}
 */ /////////////////////////////////////////////// */
 #alist{
     background: red;
     padding: 20px;
 }
-button{margin-left:1em;}
+button{
+  background-color: darkblue;
+  color:white;
+  width: 5em;
+  height: 3em;
+  padding: 10px;
+  line-height:15px;
+  border: solid 1px #fff;
+
+  box-shadow: 1px 1px 2px 0 #707070;
+  transition: box-shadow 0.3s;
+}
+button:hover{box-shadow: inset 1px 1px 2px 0 #c9c9c9;background-color: blue;}
 
 
 #ADMIN_ADD_ITEM_ACTION{color:red;}
@@ -152,3 +165,29 @@ button{margin-left:1em;}
 }
 .admin{color:red;}
 .customer{color:blue;}
+
+
+input[type="text"] {
+  padding: 10px;
+  background-color: #cce5ff;
+  line-height:15px;
+  border: solid 1px #fff;
+  box-shadow: inset 1px 1px 2px 0 #707070;
+  transition: box-shadow 0.3s;
+}
+input[type="text"]:focus,
+input[type="text"].focus {
+  box-shadow: inset 1px 1px 2px 0 #c9c9c9;
+}
+input[type="number"] {
+  background-color: #cce5ff;
+  padding: 10px;
+  line-height:15px;
+  border: solid 1px #fff;
+  box-shadow: inset 1px 1px 2px 0 #707070;
+  transition: box-shadow 0.3s;
+}
+input[type="number"]:focus,
+input[type="number"].focus {
+  box-shadow: inset 1px 1px 2px 0 #c9c9c9;
+}

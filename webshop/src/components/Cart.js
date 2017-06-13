@@ -32,6 +32,7 @@ function Cart(props) {
 
       return (
   			<div id="ul">
+          <br />
         <h4 className="customer">The Cart:</h4>
         <h5>You have {l} items</h5>
   			<ul>{list}
