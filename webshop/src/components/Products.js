@@ -21,7 +21,7 @@ function Products(props) {
           <td ><input className="edit" value={x.name}/></td>
           <td ><input className="edit"  value={x.imgurl}/></td>
           <td ><input className="edit"  value={x.price}/></td>
-          <td id="center"><input className="edit"  value={x.amount}/></td>
+          <td id="center"><input className="edit center"  value={x.amount}/></td>
 
           <td ><button onClick={props.handleClickRemoveProduct} id={x.name+x.price}  >delete</button></td>
           <td ><button onClick={editProduct} id={x.name+x.price}  >edit</button></td>
@@ -39,7 +39,7 @@ function Products(props) {
         <h4 className="admin">Add a new product:</h4>
         <input type="text" onChange={enterName} className="name" placeholder="name" name="name"  value={inputs.name}/>
         <input type="number" onChange={enterPrice} className="price" placeholder="price" name="price" value={inputs.price}/>
-        <input type="number" onChange={enterAmount} className="amount" placeholder="amount" name="amount" value={inputs.amount}/>
+        <input type="number" onChange={enterAmount} className="amount " placeholder="amount" name="amount" value={inputs.amount}/>
         <input type="text" onChange={enterURL} className="url" placeholder="url" name="url" value={inputs.imgurl}/>
         <button type="reset" onClick={AddProduct}>Add product</button>
   		  </div>
@@ -48,7 +48,7 @@ function Products(props) {
 
       function editProduct(e) {
         console.log('click');
-      
+
       }
 
       function AddProduct(e) {

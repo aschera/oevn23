@@ -15,18 +15,13 @@ function productReducer(state = [], action) {
 		case ADMIN_ADD_ITEM_ACTION:
 			return [...state, action];
 		case ADMIN_REMOVE_ITEM_ACTION:
-					if(state.length < 2 ){
-						let result = [];
-								    return result;
-					}
-					else {
-						let index = state.indexOf(action.id);
-						let result = state.splice(index,1);
-								    return result;
-					}
-		default:
-			return state;
-	}
+		let Removed = state.filter(function(elemenet) {
+			return elemenet.id !== action.id;
+		});
+		return Removed;
+	default:
+		return state;
+		}
 }
 function cartReducer(state = [], action) {
 	switch( action.type ) {
