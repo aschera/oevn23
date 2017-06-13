@@ -48,9 +48,8 @@ class TabComponent extends Component {
 		}
 		return (
 			<div className="App middle">
-      <div>logo</div>
+      <div className="logo" ><div className="img"></div></div>
 			<div className="tabheader">
-			  <div id="menu"></div>
 				<button className="menu" style={{backgroundColor: this.state.cart}}  onClick={this.handleClickSeeCart}>Cart</button>
 			  <button className="menu" style={{backgroundColor: this.state.options}} onClick={this.handleClickProducts}>Options</button>
 				<button className="menu" style={{backgroundColor: this.state.history}} onClick={this.handleClickHistory}>History</button>
