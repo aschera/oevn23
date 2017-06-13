@@ -40,16 +40,20 @@ class TabComponent extends Component {
 		}
 		return (
 			<div className="App">
-			<div className="tabheader">
 
-			  <button className="tabA" onClick={this.handleClickProducts}>Admin: product options</button>
+			<div className="tabheader">
+			  <div id="menu">Menu</div>
+				<button className="tabC" onClick={this.handleClickSeeCart}>Cart</button>
+			  <button className="tabA" onClick={this.handleClickProducts}>Options</button>
 				<button className="tab" onClick={this.handleClickHistory}>History</button>
-        <button className="tabC" onClick={this.handleClickBuyProducts}>Customer: select products</button>
-				<button className="tabC" onClick={this.handleClickSeeCart}>Customer: Cart</button>
+        <button className="tabC" onClick={this.handleClickBuyProducts}>Shop</button>
+
 			</div>
+
 			<div className="tabbody">
 				{view}
 			</div>
+
 			<div>
 			</div>
 

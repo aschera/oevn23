@@ -10,7 +10,7 @@ import {tabReducer, cartReducer,productReducer, historyReducer} from './reducers
 
 
 let initialState = {
-	tab: 1,  // 1=väder, 2=tal
+	tab: 3,  // 1=väder, 2=tal
 	products:[
 						{id:'Teddy100', name: 'Teddy', price:100, imgurl:'https://images-na.ssl-images-amazon.com/images/I/81ZPqnOryZL._SL1500_.jpg', amount:5},
 						{id:'Doll200', name: 'Doll', price:200, imgurl:'http://s7d2.scene7.com/is/image/Mattel/DNJ69_Kendall_Doll_1?$null$', amount:4},

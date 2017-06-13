@@ -4,23 +4,16 @@
 .tabbody {
 	width: 70%;
 	height: 60%;
-	border: 1px solid black;
-	padding: 10px;
-	border-radius: 2px;
-}
-.tabheader {
+	padding: 0.3em;;
 
 }
-.tabheader > *:focus {
-	outline: 0;
-	background-color: white;
-}
-.tabheader > * {
-	border-top-right-radius: 10px;
-	border-color: darkgray;
-	border-bottom-color: lightgray;
-	border-width: 1px;
-	margin-left: 2px;
+.tabheader {
+background-color: black;
+height: 2.6em;
+width: 70%;
+border: 1px solid black;
+padding: 0.1em;
+
 }
 
 .App {
@@ -29,13 +22,13 @@
 
 
 ul li {
-    background: #cce5ff;
+    background: lightgrey;
     margin: 0.2em;
 		padding:0.3em;
     border: 1px solid black;
 }
 ul {
-    background: #3399ff;
+    background: grey;
     padding: 20px;
 }
 */  TABLE */
@@ -78,7 +71,7 @@ padding: 0.4em;}
   border: 1px solid black;
 }
 .users th {
-  background: darkblue;
+  background: black;
   color: white;
 }
 .users td,
@@ -86,18 +79,18 @@ padding: 0.4em;}
   padding: 5px 10px;
 }
 .users tr:nth-child(even) {
-  background: lightblue;
+  background: grey;
   border: 1px solid black;
 }
 td {font-size: 0.8em;}
 th {font-size: 0.9em;}
 */ /////////////////////////////////////////////// */
 #alist{
-    background: red;
+    background: green;
     padding: 20px;
 }
 button{
-  background-color: darkblue;
+  background-color: black;
   color:white;
   width: 5em;
   height: 3em;
@@ -108,20 +101,21 @@ button{
   box-shadow: 1px 1px 2px 0 #707070;
   transition: box-shadow 0.3s;
 }
-button:hover{box-shadow: inset 1px 1px 2px 0 #c9c9c9;background-color: blue;}
+button:hover{box-shadow: inset 1px 1px 2px 0 #c9c9c9;background-color: lightgrey; color:black;}
 
 
-#ADMIN_ADD_ITEM_ACTION{color:red;}
+#ADMIN_ADD_ITEM_ACTION{color:orange;}
 #ADMIN_REMOVE_ITEM_ACTION{color:green;}
-#CUSTOMER_ADD_ITEM_TO_CART_ACTION{color:blue;}
+#CUSTOMER_ADD_ITEM_TO_CART_ACTION{color:purple;}
 
 
 
 .tabA{
 	white-space: normal;
-	padding: 0.3em 0.6em;
+  margin-right: 0.2em;
+	padding: 0.2em;
 	float: left;
-	width: auto;
+	width: 8em;
 	border: none;
 	outline: none;
 	display: block;
@@ -129,15 +123,18 @@ button:hover{box-shadow: inset 1px 1px 2px 0 #c9c9c9;background-color: blue;}
 	text-decoration: none;
 	text-align: center;
 	cursor: pointer;
-	color: #fff !important;
-	background-color: #f44336 !important;
+  color: black !important;
+	background-color: white !important;
+  float: right;
 }
+
 
 .tabC{
 	white-space: normal;
-	padding: 0.3em 0.6em;
+  margin-right: 0.2em;
+	padding: 0.2em;
 	float: left;
-	width: auto;
+	width: 8em;
 	border: none;
 	outline: none;
 	display: block;
@@ -145,14 +142,16 @@ button:hover{box-shadow: inset 1px 1px 2px 0 #c9c9c9;background-color: blue;}
 	text-decoration: none;
 	text-align: center;
 	cursor: pointer;
-	color: #fff !important;
-	background-color: blue !important;
+  color: black !important;
+	background-color: white !important;
+  float: right;
 }
 .tab{
 	white-space: normal;
-	padding: 0.3em 0.6em;
+  margin-right: 0.2em;
+	padding: 0.2em;
 	float: left;
-	width: auto;
+	width: 8em;
 	border: none;
 	outline: none;
 	display: block;
@@ -161,15 +160,31 @@ button:hover{box-shadow: inset 1px 1px 2px 0 #c9c9c9;background-color: blue;}
 	text-align: center;
 	cursor: pointer;
 	color: black !important;
-	background-color: yellow !important;
+	background-color: white !important;
+  float: right;
 }
-.admin{color:red;}
-.customer{color:blue;}
-
+.admin{color:Brown;}
+.customer{color:black;}
+#menu {
+  font-size: 1.8em;
+  color:white;
+  display: inline;
+  white-space: normal;
+  margin-right: 0.2em;
+  padding: 0.2em;
+  float: left;
+  width: 8em;
+  border: none;
+  outline: none;
+  display: block;
+  overflow: hidden;
+  text-decoration: none;
+  float: left;
+}
 
 input[type="text"] {
   padding: 10px;
-  background-color: #cce5ff;
+  background-color:lightgrey;
   line-height:15px;
   border: solid 1px #fff;
   box-shadow: inset 1px 1px 2px 0 #707070;
@@ -180,7 +195,7 @@ input[type="text"].focus {
   box-shadow: inset 1px 1px 2px 0 #c9c9c9;
 }
 input[type="number"] {
-  background-color: #cce5ff;
+  background-color: lightgrey;
   padding: 10px;
   line-height:15px;
   border: solid 1px #fff;

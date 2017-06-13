@@ -34,14 +34,14 @@ function Products(props) {
       </li> )
       return (
   			<div id="ul">
-          <br />
-        <h4 className="admin">Products in the store:</h4>
-        
+
+        <h4>Products in the store:</h4>
+
   			<ul id="alist">{list}</ul>
+        <br />
+        <hr/>
 
-        <hr className="admin"/>
-
-        <h4 className="admin">Add a new product:</h4>
+        <h4>Add a new product:</h4>
         <input type="text" onChange={enterName} className="name " placeholder="name" name="name"  value={inputs.name}/>
         <input type="number" onChange={enterPrice} className="price " placeholder="price" name="price" value={inputs.price}/>
         <input type="number" onChange={enterAmount} className="amount " placeholder="amount" name="amount" value={inputs.amount}/>
