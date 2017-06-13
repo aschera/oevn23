@@ -8,11 +8,19 @@ import {actionAddToCart, actionChangeTab, actionRemoveProduct, actionAddProduct,
 // nya actions
 import {connect} from 'react-redux';
 
-var inputs = {name: undefined, price: undefined, amount: undefined}
+var inputs = {name: undefined, price: undefined, amount: undefined};
+
 class TabComponent extends Component {
 
 	constructor(props) {
 		super(props);
+		this.state = {
+			options:'#DCD0C0',
+			shop:'#C0B283',
+			history:'#DCD0C0',
+			cart: '#DCD0C0',
+		};
+
 		this.handleClickProducts = this.handleClickProducts.bind(this);
 		this.handleClickBuyProducts = this.handleClickBuyProducts.bind(this);
 		this.handleClickHistory = this.handleClickHistory.bind(this);
@@ -39,14 +47,14 @@ class TabComponent extends Component {
 			view = <Cart cart={this.props.cart} />;
 		}
 		return (
-			<div className="App">
-
+			<div className="App middle">
+      <div>logo</div>
 			<div className="tabheader">
-			  <div id="menu">Menu</div>
-				<button className="tabC" onClick={this.handleClickSeeCart}>Cart</button>
-			  <button className="tabA" onClick={this.handleClickProducts}>Options</button>
-				<button className="tab" onClick={this.handleClickHistory}>History</button>
-        <button className="tabC" onClick={this.handleClickBuyProducts}>Shop</button>
+			  <div id="menu"></div>
+				<button className="menu" style={{backgroundColor: this.state.cart}}  onClick={this.handleClickSeeCart}>Cart</button>
+			  <button className="menu" style={{backgroundColor: this.state.options}} onClick={this.handleClickProducts}>Options</button>
+				<button className="menu" style={{backgroundColor: this.state.history}} onClick={this.handleClickHistory}>History</button>
+        <button className="menu" style={{backgroundColor: this.state.shop}} onClick={this.handleClickBuyProducts}>Shop</button>
 
 			</div>
 
@@ -121,15 +129,41 @@ enterAmount(e){
 
 	handleClickHistory(e) {
 		this.changeTab(2);
+
+		this.setState({
+			options:'#DCD0C0',
+			shop:'#DCD0C0',
+			history:'#C0B283',
+			cart: '#DCD0C0',
+		})
+
 	}
 	handleClickProducts(e) {
 		this.changeTab(1);
+		this.setState({
+			options:'#C0B283',
+			shop:'#DCD0C0',
+			history:'#DCD0C0',
+			cart: '#DCD0C0',
+		})
 	}
 	handleClickBuyProducts(e) {
 		this.changeTab(3);
+		this.setState({
+			options:'#DCD0C0',
+			shop:'#C0B283',
+			history:'#DCD0C0',
+			cart: '#DCD0C0',
+		})
 	}
 	handleClickSeeCart(e) {
 		this.changeTab(4);
+		this.setState({
+			options:'#DCD0C0',
+			shop:'#DCD0C0',
+			history:'#DCD0C0',
+			cart: '#C0B283',
+		})
 	}
 	changeTab(tab) {
 		let action = actionChangeTab(tab);
