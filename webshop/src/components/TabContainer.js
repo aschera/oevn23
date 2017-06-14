@@ -34,6 +34,8 @@ class TabComponent extends Component {
 		this.handleClickRemoveProduct = this.handleClickRemoveProduct.bind(this);
 
 		this.handleAddCart = this.handleAddCart.bind(this);
+		this.handleClickRemoveCart = this.handleClickRemoveCart.bind(this);
+
 	}
 	render() {
 		let view;
@@ -44,7 +46,7 @@ class TabComponent extends Component {
 		} else if( this.props.tab === 3 ) {
 			view = <Shop products={this.props.products} handleAddCart={this.handleAddCart}/>;
 		} else if( this.props.tab === 4 ) {
-			view = <Cart cart={this.props.cart} />;
+			view = <Cart cart={this.props.cart} handleClickRemoveCart={this.handleClickRemoveCart}/>;
 		}
 
 		let cartlength = this.props.cart.length;
@@ -90,6 +92,17 @@ class TabComponent extends Component {
 			this.props.dispatch( action );
 			this.props.dispatch( actionHistory(action) );
 	}
+
+	handleClickRemoveCart(e) {
+			console.log(e);
+			/*
+			let action = actionRemoveCart(x);
+			this.props.dispatch( action );
+			this.props.dispatch( actionHistory(action) );
+			*/
+	}
+
+
 	handleAddCart(a) {
 		 let x = this.props.products;
 		 function find(key1, value) {

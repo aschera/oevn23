@@ -3,15 +3,23 @@ import React from 'react';
 
 
 function Cart(props) {
+
+function click(e){
+  let x = e.target.id;
+  props.handleClickRemoveCart(x);
+}
+
+
     let i=0;
     let price = 0;
     const list = props.cart.map( x => <li key={i++}>
       <table>
       <tbody>
         <tr>
-          <td >{x.name}</td>
+          <td className="left">{x.name}</td>
           <td >{x.amount}x</td>
           <td className="right">SEK {x.price}.-</td>
+          <td><button onClick={click} className="buybutton2" id={x.name+x.price}>x</button></td>
         </tr>
         </tbody>
       </table>

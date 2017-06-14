@@ -15,7 +15,7 @@ function Products(props) {
           <td className="center">{x.amount} items</td>
 
           <td >
-            <button onClick={props.handleClickRemoveProduct} className="buybutton1 right" id={x.name+x.price}  >delete</button>
+            <button onClick={props.handleClickRemoveProduct} className="buybutton1" id={x.name+x.price}  >delete</button>
 
           </td>
 
