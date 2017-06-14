@@ -13,10 +13,10 @@ import {tabReducer, cartReducer,productReducer, historyReducer} from './reducers
 let initialState = {
 	tab: 3,  // 1=väder, 2=tal
 	products:[
-						{id:'Teddy100', name: 'Teddy', price:100, imgurl:'https://images-na.ssl-images-amazon.com/images/I/81ZPqnOryZL._SL1500_.jpg', amount:5},
-						{id:'Doll200', name: 'Doll', price:200, imgurl:'http://s7d2.scene7.com/is/image/Mattel/DNJ69_Kendall_Doll_1?$null$', amount:4},
-						{id:'Car50', name: 'Car', price:50, imgurl:'https://cdn.shopify.com/s/files/1/0374/3593/products/5.jpeg?v=1392395253', amount:3},
-						{id:'Book15', name: 'Book', price:15, imgurl:'https://sc01.alicdn.com/kf/HT1zGxmFOheXXagOFbXf/2423702/HT1zGxmFOheXXagOFbXf.jpg', amount:4},
+						{id:'Teddy100', name: 'Teddy', price:100, imgurl:'http://www.supercutekawaii.com/wp-content/uploads/pbdoll2.jpg', amount:5},
+						{id:'Doll200', name: 'Doll', price:200, imgurl:'https://lh4.googleusercontent.com/proxy/nnsd05DApmfM1XcNkDNTJH_1K-US_5WGFCQoIYt7Hnt5G83L-0IEUVOJh0xvkeserE5HF6uLtLPBv1sI6NSJJJNNlceY6MLNfReH4MwIB2lEVQ=s0-d', amount:4},
+						{id:'Steampunk-Car5000', name: 'Steampunk-Car', price:5000, imgurl:'http://www.designbuzz.com/wp-content/uploads/2012/07/rad_steampunk_pirate_ship_car_naru8.jpg', amount:3},
+						{id:'Book150', name: 'Book', price:150, imgurl:'http://www.cindyvallar.com/Everything-Pirates.jpg', amount:4},
 					],
 	history: [],
 	cart: [],

@@ -20,7 +20,7 @@ h5 {color:white;}
 #cartnumber {font-size: 0.6em;}
 
 /* *************** the product list ***************************** */
- ul {padding:0; margin-left: 25%; margin-right: 25%;}
+ ul {padding:0; margin-left: 25%; margin-right: 25%; list-style-type: none;}
  li  {background-color: #C0B283; margin-bottom: 0.6em;}
  .title {
    text-align: center;
@@ -31,10 +31,27 @@ h5 {color:white;}
   border: 0;
   vertical-align: baseline;
   letter-spacing: -0.01em;
-  line-height: 3.7rem;
+  line-height: 3.9rem;
   font-family: 'EngraversRomanBT-Bold';
   text-transform: uppercase;
   font-weight: normal;
+  margin-bottom: 0.3em;
+ }
+
+ .titlesmall {
+   text-align: center;
+   color:white;
+   font-size: 2em;
+   margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+  letter-spacing: -0.01em;
+  line-height: 3.9rem;
+  font-family: 'EngraversRomanBT-Bold';
+  text-transform: uppercase;
+  font-weight: normal;
+  margin-bottom: 0.3em;
  }
 
 
@@ -102,6 +119,26 @@ h5 {color:white;}
     vertical-align: middle;min-width: 100px;
     text-decoration: none;
     background: linear-gradient(to bottom,#ff7d27 0,#f14c04 100%);}
+
+
+    .buybutton1 {
+      font-weight: 400;
+      line-height: normal;
+      margin: 0;
+      margin-left:5px;
+      overflow: visible;cursor: pointer;
+      display: inline-block;font-size: 1.2rem;
+      padding: 5px 8px;box-sizing: border-box;
+      padding-left: 0;
+      padding-right: 0;
+      width: 15px;
+      background-color: #f60;
+      border-color: #eb3f03;
+      color: #fff !important;position: relative;
+      text-align: center;
+      vertical-align: middle;min-width: 100px;
+      text-decoration: none;
+      background: linear-gradient(to bottom,#ff7d27 0,#f14c04 100%);}
 
   /*********************************************
   					VIEW
@@ -186,26 +223,33 @@ table {
 }
 
 th, td {
-    border: none;
-    text-align: left;
+    /*border: none;*/
+    text-align: center;
     padding: 8px;
+    width: 20%;
 }
 
 tr:nth-child(even){background-color: #f2f2f2}
+
+.price {margin: 0.3em; padding: 0.4em; color:white; width:50%}
+.price1 {margin: 0.3em; padding: 0.4em; color:white; float:right;}
+
+.right{text-align: right;}
+.left{text-align: left;}
+.center{margin-left: 25%;}
+
+
 /*
 .users {
   table-layout: fixed;
   width: 50vw;
   #F4F4F4-space: nowrap;
 }
-.right{text-align: right;}
-.left{text-align: left;}
-.center{text-align: center;}
+
 /* Column widths are based on these cells */
 /*
 .amountsale{width: 100%; color:white;}
-.price {margin: 0.3em;
-padding: 0.4em;}
+
 .url {margin: 0.3em;
 padding: 0.4em;}
 .row-name {
@@ -266,9 +310,9 @@ button{
 }
 button:hover{box-shadow: inset 1px 1px 2px 0 #c9c9c9;background-color: #DCD0C0; color:#373737;}
 
-.inputs {padding: 0.8em; background-color: #373737;}
+.inputs {padding: 0.8em; text-align: center;}
 
-#ADMIN_ADD_ITEM_ACTION{color:orange;}
+#ADMIN_ADD_ITEM_ACTION{color:blue;}
 #ADMIN_REMOVE_ITEM_ACTION{color:green;}
 #CUSTOMER_ADD_ITEM_TO_CART_ACTION{color:purple;}
 
