@@ -24,7 +24,6 @@ function actionAddToCart(id,name,price,amount, imgurl) {
 		price: price,
 		amount: 1,
 		imgurl: imgurl
-
 	}
 }
 

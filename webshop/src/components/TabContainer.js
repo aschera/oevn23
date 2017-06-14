@@ -46,15 +46,29 @@ class TabComponent extends Component {
 		} else if( this.props.tab === 4 ) {
 			view = <Cart cart={this.props.cart} />;
 		}
+
+		let cartlength = this.props.cart.length;
+		let number;
+		if (cartlength === 0){
+			number = ' empty';
+		}
+		else if (cartlength === 1){
+			number = cartlength + ' item'
+		}
+		else {
+			number = cartlength + ' items'
+		}
 		return (
 			<div className="App middle">
       <div className="logo" ><div className="img"></div></div>
 			<div className="tabheader">
-			  <button className="menu" style={{backgroundColor: this.state.shop}} onClick={this.handleClickBuyProducts}>Shop</button>
-
-			  <button className="menu" style={{backgroundColor: this.state.options}} onClick={this.handleClickProducts}>Edit</button>
-				<button className="menu" style={{backgroundColor: this.state.history}} onClick={this.handleClickHistory}>History</button>
-        <button className="menu" style={{backgroundColor: this.state.cart}}  onClick={this.handleClickSeeCart}>Cart</button>
+			  <button className="menu" style={{backgroundColor: this.state.shop}} onClick={this.handleClickBuyProducts}>WEBSHOP</button>
+			  <button className="menu" style={{backgroundColor: this.state.options}} onClick={this.handleClickProducts}>OPTIONS</button>
+				<button className="menu" style={{backgroundColor: this.state.history}} onClick={this.handleClickHistory}>HISTORY</button>
+        <button className="menu" style={{backgroundColor: this.state.cart}}  onClick={this.handleClickSeeCart}>
+					CART &nbsp;
+					<span id="cartnumber">( {number} )</span>
+				</button>
 
 			</div>
 

@@ -4,21 +4,38 @@ html {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+
 }
 body {
     background-color: transparent;
+
 }
+* {font-family: 'EngraversRomanBT-Bold';}
 
 /* need both html and body like this for the scalable bg image */
 
-h4 {color:white; margin:0;}
+h4 {color:white; margin:0; }
 h5 {color:white;}
 
-
+#cartnumber {font-size: 0.6em;}
 
 /* *************** the product list ***************************** */
- ul {padding:0;}
-  li  {background-color: #C0B283; margin-bottom: 0.6em;}
+ ul {padding:0; margin-left: 25%; margin-right: 25%;}
+ li  {background-color: #C0B283; margin-bottom: 0.6em;}
+ .title {
+   text-align: center;
+   color:white;
+   font-size: 3.8em;
+   margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+  letter-spacing: -0.01em;
+  line-height: 3.7rem;
+  font-family: 'EngraversRomanBT-Bold';
+  text-transform: uppercase;
+  font-weight: normal;
+ }
 
 
   /*********************************************
@@ -26,15 +43,15 @@ h5 {color:white;}
   *********************************************/
 
   .product{
-  	height: 165px;
+  	height: 151px;
   }
   .product1{
   	height: 50px;
   }
   .product>img{
-  	max-width: 250px;
+  	max-width: 150px;
     width:50%;
-    max-height: 200px;
+    max-height: 150px;
     height:100%;
     float:right;
   }
@@ -104,6 +121,7 @@ h5 {color:white;}
 .middle {
     position: absolute;
     margin: auto;
+    margin-top:0.3em;
     top: 0;
     right: 0;
     bottom: 0;
@@ -127,8 +145,6 @@ h5 {color:white;}
     filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
     /* For IE 8*/
     -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
-  height: 100vh;
-  width: 100%;
 
 }
 .tabheader {
@@ -140,15 +156,11 @@ h5 {color:white;}
     filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
     /* For IE 8*/
     -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
-height: 2.6em;
-width: 100%;
+    height: 5em;
+    width: 100%;
 }
 
 /* ****************************************************************** */
-
-.App {
-	padding: 20px;
-}
 
 .logo{
   background-color: #373737;
@@ -162,7 +174,6 @@ width: 100%;
     height: 0;
     padding-top: 15.33%;
     border-radius: 2px;
-    margin-bottom: 2px;
 }
 
 /* ************************************* table **************************************** */
@@ -247,8 +258,7 @@ button{
   color:#373737;
   width: 5em;
   height: 2.75em;
-  padding: 0.4em;
-  line-height:1em;
+  padding: 0.2em;
   border: solid 1px #fff;
   cursor: pointer;
   box-shadow: 1px 1px 2px 0 #707070;
@@ -267,8 +277,7 @@ button:hover{box-shadow: inset 1px 1px 2px 0 #c9c9c9;background-color: #DCD0C0; 
 .menu{
 	#F4F4F4-space: normal;
 	float: left;
-  font-size-adjust: auto;
-  font-size: 0.8em;
+  font-size: 1.5em;
 	width: 25%;
 	border: none;
 	outline: none;
@@ -277,6 +286,8 @@ button:hover{box-shadow: inset 1px 1px 2px 0 #c9c9c9;background-color: #DCD0C0; 
 	text-decoration: none;
 	text-align: center;
 	cursor: pointer;
+  padding: 0;
+  line-height: 1em;
 }
 .menu:hover{box-shadow: inset 2px 2px 3px 0 #c9c9c9; color:#F4F4F4}
 

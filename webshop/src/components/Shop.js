@@ -12,10 +12,6 @@ function Shop(props) {
                     <div className="product-desc">
                       Praesent sed quam auctor, lacinia enim auctor, pharetra turpis.
                       Integer vulputate nisl non faucibus condimentum.
-                      <br />
-                      Pellentesque quis elit sit amet massa tempor vehicula.
-                      Duis vel sagittis tellus. Duis in pellentesque tortor.
-                      In placerat urna vitae viverra feugiat.
                     </div>
       					</div>
 
@@ -32,7 +28,7 @@ function Shop(props) {
       return (
   			<div id="ul">
           <br />
-          <h4>Shop</h4>
+          <h4 className="title">WebShop</h4>
           <div className="flex-container">
     			   <ul>{list}</ul>
           </div>
