@@ -55,10 +55,6 @@ function Products(props) {
   /*<button onClick={clickchange} id={x.name+x.price}>edit</button>*/
 
 
-      function clickchange(e){
-        console.log(e.target);
-      }
-
       function AddProduct(e) {
         props.handleClickAddProduct(e, inputs);
         console.log(inputs);

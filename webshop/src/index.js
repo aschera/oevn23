@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import App from './components/App';
 import registerServiceWorker from './registerServiceWorker';
 import './index.css';
+import './bootstrap/css/bootstrap.min.css';
 import {createStore, combineReducers} from 'redux';
 import {Provider} from 'react-redux';
 import {tabReducer, cartReducer,productReducer, historyReducer} from './reducers/reducers.js';
