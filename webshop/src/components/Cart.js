@@ -31,6 +31,10 @@ function click(e){
           price = price + value.price;
       });
 
+      function buy(){
+       if(!alert('Purchase complete. You bought items')){window.location.reload();}
+      }
+
       return (
   			<div id="ul">
         <br />
@@ -48,7 +52,7 @@ function click(e){
         </table>
         </ul>
         <br />
-        <button className="center">Buy</button>
+        <button className="center" onClick={buy}>Buy</button>
   		  </div>
   		);
 

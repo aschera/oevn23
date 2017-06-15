@@ -1,11 +1,10 @@
 const CHANGE_TAB = 'CHANGE_TAB';
 const HISTORY = 'HISTORY';
-
 const ADMIN_ADD_ITEM_ACTION = 'ADMIN_ADD_ITEM_ACTION';
 const ADMIN_REMOVE_ITEM_ACTION = 'ADMIN_REMOVE_ITEM_ACTION';
-const ADMIN_EDIT_ITEM_ACTION = 'ADMIN_EDIT_ITEM_ACTION';
-
 const CUSTOMER_ADD_ITEM_TO_CART_ACTION = 'CUSTOMER_ADD_ITEM_TO_CART_ACTION';
+const ADMIN_REMOVE_ITEM_FROM_CART_ACTION = 'ADMIN_REMOVE_ITEM_FROM_CART_ACTION';
+
 
 // change view through tabs.
 function actionChangeTab(selectedTab) {
@@ -46,21 +45,20 @@ function actionRemoveProduct(id,name,price, amount) {
 		name: name,
 		price: price,
 		amount: amount
-
 	}
 }
-
-//ADMIN: edit item
-function actionEditProduct(id,name,price, amount) {
+//customer: delete item from the cart
+function actionRemoveCart(id,name,price, amount) {
 	return {
-		type: ADMIN_EDIT_ITEM_ACTION,
+		type: ADMIN_REMOVE_ITEM_FROM_CART_ACTION,
 		id: id,
 		name: name,
 		price: price,
 		amount: amount
-
 	}
 }
+
+
 // See history of action events.
 function actionHistory(action) {
 	return {
@@ -70,4 +68,4 @@ function actionHistory(action) {
 }
 
 
-export { ADMIN_EDIT_ITEM_ACTION, actionEditProduct, actionAddToCart, CUSTOMER_ADD_ITEM_TO_CART_ACTION, actionRemoveProduct, ADMIN_REMOVE_ITEM_ACTION, CHANGE_TAB, actionAddProduct, ADMIN_ADD_ITEM_ACTION, actionChangeTab,  HISTORY, actionHistory };
+export { ADMIN_REMOVE_ITEM_FROM_CART_ACTION,actionRemoveCart, actionAddToCart, CUSTOMER_ADD_ITEM_TO_CART_ACTION, actionRemoveProduct, ADMIN_REMOVE_ITEM_ACTION, CHANGE_TAB, actionAddProduct, ADMIN_ADD_ITEM_ACTION, actionChangeTab,  HISTORY, actionHistory };

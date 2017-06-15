@@ -4,7 +4,7 @@ import Products from './Products';
 import Shop from './Shop';
 import Cart from './Cart';
 // ny komponent
-import {actionAddToCart, actionChangeTab, actionRemoveProduct, actionAddProduct, actionHistory} from '../actions/actions.js';
+import {actionAddToCart, actionRemoveCart, actionChangeTab, actionRemoveProduct, actionAddProduct, actionHistory} from '../actions/actions.js';
 // nya actions
 import {connect} from 'react-redux';
 
@@ -94,12 +94,10 @@ class TabComponent extends Component {
 	}
 
 	handleClickRemoveCart(e) {
-			console.log(e);
-			/*
-			let action = actionRemoveCart(x);
+			let action = actionRemoveCart(e);
 			this.props.dispatch( action );
 			this.props.dispatch( actionHistory(action) );
-			*/
+
 	}
 
 
@@ -119,7 +117,6 @@ class TabComponent extends Component {
 
 		 let result = find('id', a);
 		 let buy = this.props.products[result];
-		 console.log(buy);
 
 			let action = actionAddToCart(buy.id, buy.name, buy.price, buy.amount);
 			this.props.dispatch( action );
@@ -131,7 +128,7 @@ class TabComponent extends Component {
 		let p = d.price;
 		let a = d.amount;
     let w = d.imgurl;
-		console.log(d);
+
 		try {
 				let action = actionAddProduct(n,p,a,w);
 				this.props.dispatch( action );
